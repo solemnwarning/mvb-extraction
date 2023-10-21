@@ -2,6 +2,8 @@
 
 This repository has the tools I've been writing for a (very cursed) pipeline to extract the content from the [September 1992 MSDN pre-release](https://archive.org/details/MSDN_September_1992), and possibly other things which use the Microsoft Multimedia Viewer.
 
+![pipeline graph](pipeline.png)
+
 ## MMVRipper
 
 This application runs on a Windows machine which has the MSDN viewer open and depending on compile-time flags, extracts any of the following:
@@ -44,3 +46,11 @@ The page printouts are captured by MMVRipper pretending to be a network printer 
 4. Set the above printer as the default printer.
 
 Once that is done, MMVRipper's emulated printer will receive each print from the viewer application and the PostScript will be saved to disk.
+
+## ocr.pl
+
+This script performs OCR on the screenshots of the index captured by the MMVRipper program and produces a hierarchical listing of titles within a Microsoft Multimedia Viewer index.
+
+## makecnt.pl
+
+This script takes the tree listing produced by ocr.pl, the page text dumps from MMVRipper and a flat .cnt file produced by running helpdeco on a .mvb file and attempts to reproduce the original hierarchy in a new .cnt file.

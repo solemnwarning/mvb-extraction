@@ -1,0 +1,36 @@
+digraph {
+
+"mvb files" -> "helpdeco"
+"mvb files" -> "MVB Viewer" -> "MVBRipper"
+
+"MVBRipper" -> "MVB Viewer"
+"MVBRipper" -> "Page ID listing"
+"MVBRipper" -> "Index screenshots"
+"MVBRipper" -> "Page text dumps"
+
+"helpdeco" -> "WinHelp projects"
+"WinHelp projects" -> "Bad RTF files"
+"Bad RTF files" -> "Word 97"
+"Word 97" -> "Good RTF files"
+"Good RTF files" -> "WinHelp projects"
+
+"helpdeco" -> "Flat .cnt files"
+
+"Page ID listing" -> "ocr.pl"
+"Index screenshots" -> "ocr.pl"
+"ocr.pl" -> "Page ID + Title listing"
+
+"Page ID + Title listing" -> "makecnt.pl"
+"Flat .cnt files" -> "makecnt.pl"
+"Page text dumps" -> "makecnt.pl"
+"makecnt.pl" -> "Hierarchical .cnt files"
+
+"Hierarchical .cnt files" -> "Manual tweaking"
+"Manual tweaking" -> "WinHelp projects"
+
+"WinHelp projects" -> "HTML Help Workshop"
+"HTML Help Workshop" -> "HTML Help Projects"
+
+"HTML Help Projects" -> "Compiled HTML Help"
+
+}
